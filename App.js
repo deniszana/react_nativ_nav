@@ -6,7 +6,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { MainTabScreen , HomeStackScreen,   DetailsStackScreen } from './screens/MainTabScreen';
+
+
+{
+/*
 import DetailsScreen from './screens/DetailsScreen';
+import HomeScreen from './screens/HomeScreen';
+
 
 function HomeStackScreen({navigation}) {
   return (
@@ -40,7 +47,7 @@ function DetailStackScreen({navigation}) {
         fontWeight: 'bold'
         } 
       }}>
-      <DetailStack.Screen name="Detail" component={DetailScreen}  options={{
+      <DetailStack.Screen name="Details" component={DetailsScreen}  options={{
         title:'detail',
         headerLeft: () => (
             <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
@@ -55,8 +62,8 @@ function HomeScreen({navigation}) {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
       <Button 
-        title="goto detail"
-        onPress={() => navigation.navigate("Detail")}
+        title="goto details"
+        onPress={() => navigation.navigate("Details")}
       />
     </View>
   );
@@ -68,7 +75,7 @@ function DetailScreen({navigation}) {
       <Text>détail Screen</Text>
       <Button 
         title="goto detail again"
-        onPress={() => navigation.push("Detail")}
+        onPress={() => navigation.push("Details")}
       />
       <Button 
         title="goto home"
@@ -85,6 +92,9 @@ function DetailScreen({navigation}) {
     </View>
   );
 }
+
+*/  
+}
 const HomeStack = createStackNavigator();
 const DetailStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -93,8 +103,7 @@ export default function App() {
     <NavigationContainer>
 
 <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeStackScreen} />
-        <Drawer.Screen name="Detail" component={DetailStackScreen} />
+        <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
       </Drawer.Navigator>      
     
   </NavigationContainer>
